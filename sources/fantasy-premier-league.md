@@ -1,6 +1,6 @@
 # Fantasy Premier League
 
-We start by listing our inputs:
+We'll start by listing our inputs:
 
 * A total budget for player salaries $\S^p_{budget}: b \in \mathbb{R}_+$
 * A salary per player $\S^p_{salary}: s \in \mathbb{R}_+^P$, where $\S^d_{player}: P$ is the set of players
