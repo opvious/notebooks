@@ -2,23 +2,23 @@
 
 This model finds the optimal way to settle debts within a group of friends.
 Optimal here is defined as minimizing the total number of payments sent by each
-person and the total money exchanged. The relative of each factor is controlled
-by an input parameter.
+person and the total money exchanged. The relative importance of each factor is
+configurable via an input parameter.
 
 Our formulation has two dimensions:
 
 + The friends in the group: $\S^d_{friends}:F$.
 + The transactions considered: $\S^d_{transactions}:T$.
 
-There are four inputs:
+There are four parameters:
 
 + The amount paid by each person during a transaction:
   $\S^p_{paid}: c \in \mathbb{R}^{T \times F}$.
-+ Who (and how much) was involved each person in a transaction:
++ Who (and by how much) was involved each person in a transaction:
   $\S^p_{share}: s \in \mathbb{R}_+^{T \times F}$.
-+ Trade-off factor: $\S^p_{factor}: f \in \mathbb{R}$. A higher value will place
-  a higher importance on minimizing transactions sent per person (potentially
-  leading to more money transferred overall).
++ Settlement trade-off factor: $\S^p_{factor}: f \in \mathbb{R}$. A higher value
+  will place a higher importance on minimizing transactions sent per person
+  (potentially leading to more money transferred overall).
 + The smallest amount we allow per settlement payment:
   $\S^p_{floor}: g \in \mathbb{R}$.
 
