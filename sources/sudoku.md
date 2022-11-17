@@ -4,11 +4,11 @@ We start by defining the sets of possible values
 $\S^a: N \doteq \{1 \ldots 9\}$ and possible
 positions $\S^a: P \doteq \{0 \ldots 8\}$. With
 these two, we can define the variable we will optimize over:
-$\S^v_{decisions}: \alpha \in \{0,1\}^{P \times P \times N}$.
+$\S^v_{decisions[row,column,value]}: \alpha \in \{0,1\}^{P \times P \times N}$.
 
-The first constraint uses input hints $\S^p_{hints[row,column,value]}: h \in
-\{0,1\}^{P \times P \times N}$, enforcing that our choice always matches the
-hint:
+The first constraint uses input hints
+$\S^p_{hints[row,column,value]}: h \in \{0,1\}^{P \times P \times N}$,
+enforcing that our choice always matches the hint:
 
 $$
   \S^c_{hintsObserved}:
@@ -37,7 +37,7 @@ be one of each value.
 + Finally, per box:
 
   $$
-    \S^c_{onePerBox} &:
+    \S^c_{onePerBox}:
       \forall v \in N, k^{b} \in P,
       \sum_{k^{c} \in P}
       \alpha_{
