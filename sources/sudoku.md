@@ -11,8 +11,8 @@ $\S^p_{input[row,column,value]}: h \in \{0,1\}^{P \times P \times N}$,
 where present:
 
 $$
-  \S^c_{mask}:
-  \forall v \in N, i,j \in P, \alpha_{i,j,v} \geq h_{i,j,v}
+  \S^c_{mask[row,column,value]}:
+  \forall i,j \in P, v \in N, \alpha_{i,j,v} \geq h_{i,j,v}
 $$
 
 Then there are four types of unicity constraints, all enforcing that there must
