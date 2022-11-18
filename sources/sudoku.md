@@ -15,10 +15,18 @@ $$
   \forall v \in N, i,j \in P, \alpha_{i,j,v} \geq h_{i,j,v}
 $$
 
-Then there are three types of unicity constraints, all enforcing that there must
+Then there are four types of unicity constraints, all enforcing that there must
 be one of each value.
 
-+ First, per row:
++ First, per cell:
+
+  $$
+    \S^c_{onePerCell}:
+    \forall i, j \in P,
+      \sum_{v \in N} \alpha_{i,j,v} = 1
+  $$
+
++ Then, per row:
 
   $$
     \S^c_{onePerRow}:
