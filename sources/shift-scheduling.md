@@ -3,7 +3,7 @@
 ## Overview
 
 This formulation derives optimal schedules for achieving a given coverage level
-per shift at minimum cost. It is inspired by [a similar scheduling problem](https://medium.com/walmartglobaltech/automating-shift-scheduling-with-linear-programming-fe1720f13620)
+per shift at minimum cost. It is a simplified version of [a similar scheduling problem](https://medium.com/walmartglobaltech/automating-shift-scheduling-with-linear-programming-fe1720f13620)
 encountered at Walmart.
 
 ## Description
