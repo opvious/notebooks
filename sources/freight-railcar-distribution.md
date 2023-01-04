@@ -1,7 +1,9 @@
 # Freight railcar distribution
 
 This formulation is inspired by the model described here:
-https://www.scielo.br/j/prod/a/93btRgNKNWPKm5YWXGnhZVN/?lang=en#
+https://www.scielo.br/j/prod/a/93btRgNKNWPKm5YWXGnhZVN/?lang=en#. The goal is to
+minimize the cost of transporting goods across a network of rail terminals while
+respecting terminal capacities and travel times.
 
 ## Inputs
 
