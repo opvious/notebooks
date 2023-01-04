@@ -1,6 +1,8 @@
 # Train assignment planning
 
-https://oaktrust.library.tamu.edu/bitstream/handle/1969.1/195170/ALIAKBARI-DISSERTATION-2021.pdf
+https://oaktrust.library.tamu.edu/bitstream/handle/1969.1/195170/ALIAKBARI-DISSERTATION-2021.pdf (page 71)
+
+## Inputs
 
 + $\S^d_{time}: T$
 + $\S^d_{unit}: U$
@@ -12,10 +14,16 @@ https://oaktrust.library.tamu.edu/bitstream/handle/1969.1/195170/ALIAKBARI-DISSE
 + $\S^p_{minLoad}: l^{min} \in \mathbb{R}$
 + $\S^p_{maxLoad}: l^{max} \in \mathbb{R}$
 
+## Outputs
+
 + $\S^v_{shipment}: \sigma \in \{0,1\}^{T \times U}$
 + $\S^v_{departure}: \delta \in \{0,1\}^{T \times D}$
 
+## Objective
+
 $\S^o: \min \sum_{t \in T, d \in D} \delta_{t,d}$
+
+## Constraints
 
 $$
   \S^c_{exactlyOneShipment}:
