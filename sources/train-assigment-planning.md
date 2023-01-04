@@ -10,20 +10,24 @@ https://oaktrust.library.tamu.edu/bitstream/handle/1969.1/195170/ALIAKBARI-DISSE
 
 + $\S^p_{penalty}: p \in \mathbb{R}^{T \times U}$
 + $\S^p_{maxPenalty}: p^{max} \in \mathbb{R}$
-+ $\S^p_{goal}: g \in \lbrace 0,1\rbrace ^{U \times D}$, $\S^a: \forall d \in D, U^D_d \doteq \lbrace u \in U \mid g_{u,d} = 1 \rbrace $
++ $\S^p_{goal}: g \in \lbrace 0, 1 \rbrace^{U \times D}$, $\S^a: \forall d \in D, U^D_d \doteq \lbrace u \in U \mid g_{u,d} = 1 \rbrace $
 + $\S^p_{minLoad}: l^{min} \in \mathbb{R}$
 + $\S^p_{maxLoad}: l^{max} \in \mathbb{R}$
++ $\S^p_{trainCountWeight}: w^{train} \in \mathbb{R}$
++ $\S^p_{totalPenaltyWeight}: w^{penalty} \in \mathbb{R}$
 
 ## Outputs
 
-+ $\S^v_{shipment}: \sigma \in \lbrace 0,1\rbrace ^{T \times U}$
-+ $\S^v_{departure}: \delta \in \lbrace 0,1\rbrace ^{T \times D}$
++ $\S^v_{shipment}: \sigma \in \lbrace 0, 1 \rbrace^{T \times U}$
++ $\S^v_{departure}: \delta \in \lbrace 0, 1 \rbrace^{T \times D}$
 
 ## Objective
 
 $$
   \S^o:
-  \min \sum_{t \in T, d \in D} \delta_{t,d}
+  \min
+    w^{train} \sum_{t \in T, d \in D} \delta_{t,d} +
+    w^{penalty} \sum_{t \in T, u \in U} p_{t,u} \sigma_{t,u}
 $$
 
 ## Constraints
