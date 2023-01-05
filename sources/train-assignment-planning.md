@@ -1,6 +1,9 @@
 # Train assignment planning
 
-This formulation is inspired by https://oaktrust.library.tamu.edu/bitstream/handle/1969.1/195170/ALIAKBARI-DISSERTATION-2021.pdf (page 71)
+This formulation is inspired by https://oaktrust.library.tamu.edu/bitstream/handle/1969.1/195170/ALIAKBARI-DISSERTATION-2021.pdf
+(page 71). The goal is to compute the optimal train schedule for shipping units
+so that they arrive in time to their corresponding destination while respecting
+load capacity constraints.
 
 ## Inputs
 
