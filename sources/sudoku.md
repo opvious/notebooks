@@ -1,15 +1,14 @@
 # Sudoku model
 
 We start by defining the sets of possible values
-$\S^a: N \doteq \{1 \ldots 9\}$ and possible
-positions $\S^a: P \doteq \{0 \ldots 8\}$. With
+$\S^a: N \doteq \lbrace 1 \ldots 9 \rbrace$ and possible
+positions $\S^a: P \doteq \lbrace 0 \ldots 8 \rbrace$. With
 these two, we can define the variable we will optimize over:
-$\S^v_{output[row,column,value]}: \alpha \in \{0,1\}^{P \times P \times N}$.
+$\S^v_{output[row,column,value]}: \alpha \in \lbrace 0,1 \rbrace^{P \times P \times N}$.
 
 We do not specify an objective as we only care about finding a feasible solution
 to the game's constraints. The first constraint enforces that the output matches
-any input hints $\S^p_{input[row,column,value]}: h \in \{0,1\}^{P \times P \times
-N}$:
+any input hints $\S^p_{input[row,column,value]}: h \in \lbrace 0,1 \rbrace^{P \times P \times N}$:
 
 $$
   \S^c_{mask[row,column,value]}:
