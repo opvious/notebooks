@@ -27,7 +27,7 @@ The staffing schedule is the only output:  $\S^v_{schedule[day]}: \alpha \in \lb
 
 ### Objective
 
-We maximize the total level of scheduled employees: $\S^o: \max \sum_{d \in D, e \in E, s \in S} l_e \alpha_{d,e,s}$
+We maximize the total level of scheduled employees: $\S^o_{totalLevel}: \max \sum_{d \in D, e \in E, s \in S} l_e \alpha_{d,e,s}$
 
 ### Constraints
 

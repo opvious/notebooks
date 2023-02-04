@@ -16,7 +16,7 @@ There are four parameters:
   $\S^p_{paid}: c \in \mathbb{R}^{T \times F}$.
 + Who (and by how much) was involved each person in a transaction:
   $\S^p_{share}: s \in \mathbb{R}_+^{T \times F}$.
-+ Settlement trade-off factor: $\S^p_{factor}: f \in \mathbb{R}$. A higher value
++ Settlement trade-off factor: $\S^p_{factor}: q \in \mathbb{R}$. A higher value
   will place a higher importance on minimizing transactions sent per person
   (potentially leading to more money transferred overall).
 + The smallest amount we allow per settlement payment:
@@ -48,15 +48,23 @@ We'll also introduce a few convenience aliases:
 We're now ready to express our model's constraints:
 
 $$
-\S^c_{zeroSum}: \forall f \in F, \sum_{s \in F} \alpha_{s,f} - \sum_{r \in F} \alpha_{f, r} = \sum_{t \in T}  \left( c_{t,f} - p_{t} \frac{s_{t,f}}{w_t} \right)
+\S^c_{zeroSum}:
+  \forall f \in F,
+  \sum_{f^s \in F} \alpha_{f^s,f}
+    - \sum_{f^r \in F} \alpha_{f, f^r}
+    = \sum_{t \in T}  \left( c_{t,f} - p_{t} \frac{s_{t,f}}{w_t} \right)
 $$
 
 $$
-\S^c_{transferActivation}: \forall s, r \in F, \alpha_{s, r} \leq p^{total} \beta_{s, r}
+\S^c_{transferActivation}:
+  \forall f^s, f^r \in F,
+  \alpha_{f^s, f^r} \leq p^{total} \beta_{f^s, f^r}
 $$
 
 $$
-\S^c_{paymentActivation}: \forall r \in F, \sum_{s \in F} \beta_{r, s} \leq \gamma_r
+\S^c_{paymentActivation}:
+  \forall f^r \in F,
+  \sum_{f^s \in F} \beta_{f^r, f^s} \leq \gamma_{f^r}
 $$
 
 $$
@@ -64,11 +72,13 @@ $$
 $$
 
 $$
-\S^c_{aboveFloor}: \forall s, r \in F, \alpha_{s, r} + (1 - \beta_{s, r}) p^{total} \geq g
+\S^c_{aboveFloor}:
+  \forall f^s, f^r \in F,
+  \alpha_{f^s, f^r} + (1 - \beta_{f^s, f^r}) p^{total} \geq g
 $$
 
 Finally, our objective:
 
 $$
-\S^o: \min f p^{total} \delta + \sum_{s, r \in F} \alpha_{s, r}
+\S^o_{totalPenalty}: \min q p^{total} \delta + \sum_{f^s, f^r \in F} \alpha_{f^s, f^r}
 $$
