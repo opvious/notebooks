@@ -20,7 +20,8 @@ satisfying a minimum expected return and allocation per group.
 The only output is the allocation per asset $\S^v_{allocation}: \alpha \in [0,1]^A$ chosen in order to minimize risk:
 
 $$
-\S^o: \min \sum_{a^l, a^r \in A} c_{a^l,a^r} \alpha_{a^l} \alpha_{a^r}
+\S^o_{risk}:
+  \min \sum_{a^l, a^r \in A} c_{a^l,a^r} \alpha_{a^l} \alpha_{a^r}
 $$
 
 Subject to the following constraints:

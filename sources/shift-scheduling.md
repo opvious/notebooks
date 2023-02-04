@@ -45,7 +45,7 @@ encountered at Walmart.
 ### Constraints & Objective
 
 We minimize total cost
-$\S^o: \min \sum_{a \in A, d \in D, s \in S} \alpha_{d,a,s} r_{a,s}$ such that:
+$\S^o_{totalCost}: \min \sum_{a \in A, d \in D, s \in S} \alpha_{d,a,s} r_{a,s}$ such that:
 
 + Each shift has enough contractors:
 

@@ -40,7 +40,7 @@ respecting terminal capacities and travel times.
 We minimize total weighted cost of parked and traveling railcars.
 
 $$
-  \S^o:
+  \S^o_{totalCost}:
   \min \sum_{t \in T} \left(
     c^{park} \sum_{i \in I} \xi_{i, t} +
     c^{travel} \sum_{(s, d) \in M} m_{s,d} \sigma^{out}_{s, d, t}

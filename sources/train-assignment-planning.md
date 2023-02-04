@@ -37,7 +37,7 @@ load capacity constraints.
 We minimize the weighted cost of trains and lateness penalties.
 
 $$
-  \S^o:
+  \S^o_{totalCost}:
   \min
     w^{train} \sum_{t \in T, d \in D} \delta_{t,d} +
     w^{penalty} \sum_{t \in T, u \in U} p_{t,u} \sigma_{t,u}
