@@ -9,7 +9,7 @@ We'll start by listing our inputs:
 * A lower ( $\S^p_{formationMin}: f^{min} \in \mathbb{N}^R$) and upper ($\S^p_{formationMax}: f^{max} \in \mathbb{N}^R$) bounds on the number of players per position
 * Each player's club, represented as another indicator matrix $\S^p_{playerClub}: m \in \lbrace 0,1 \rbrace^{P \times C}$, where $\S^d_{club}: C$ is the set of clubs
 
-Our model has a single binary output $\S^v_{selection}: \sigma \in \lbrace 0, 1 \rbrace^P$ indicating which players are selected for the team. It is chosen to maximize the team's expected points: $\S^o_{expectedPoints}: \max \sum_{p \in P} v_p \sigma_p$ , subject to the following constraints:
+Our model has a single binary output $\S^v_{selection}: \sigma \in \lbrace 0, 1 \rbrace^P$ indicating which players are selected for the team. It is chosen to maximize the team's expected points: $\S^o_{totalExpectedPoints}: \max \sum_{p \in P} v_p \sigma_p$ , subject to the following constraints:
 
 * Exactly 11 players are selected: $\S^c_{teamSize}: \sum_{p \in P} \sigma_p = 11$
 * The total salary cost is within budget: $\S^c_{withinBudget}: \sum_{p \in P} \sigma_p s_p \leq b$

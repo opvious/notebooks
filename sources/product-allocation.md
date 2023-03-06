@@ -41,7 +41,7 @@ $$
   \end{align}
 $$
 
-We then enforce the size diversity constraint via the activation variable:
+We then enforce that each allocation contains enough size diversity:
 
 $$
   \begin{align}
