@@ -19,7 +19,7 @@ satisfying supply and diversity requirements.
 ## Outputs
 
 + Product allocation, $\S^v_{allocation}: \alpha \in \mathbb{N}^{T \times P \times S \times L}$
-+ Product allocation activation variable $\S^v_{isAllocated}: \alpha^{act} \in \{0,1\}^{P \times S \times L}$
++ Product allocation activation variable $\S^v_{isAllocated}: \alpha^{act} \in \lbrace 0,1 \rbrace^{P \times S \times L}$
 
 ## Constraints
 
