@@ -1,12 +1,15 @@
 # Product allocation
 
+In this example we allocate products to stores to best meet demand while
+satisfying supply and diversity requirements.
+
 ## Inputs
 
 + A set of products, $\S^d_{product}: P$
 + Product sizes, $\S^d_{size}: S$
 + Store locations, $\S^d_{location}: L$
 + Total supply per product and size, $\S^p_{supply}: a^{max} \in \mathbb{N}^{P \times S}$
-+ Minimum product allocation per store, $\S^p_{minAllocation}: a^{min} \in \mathbb{N}^P$
++ Minimum allocation per store, $\S^p_{minAllocation}: a^{min} \in \mathbb{N}^P$
 + Maximum allocation across all stores and product, $\S^p_{maxTotalAllocation}: a^{maxTotal} \in \mathbb{N}$
 + Minimum number of available sizes per product, $\S^p_{productDiversity}: p^{div} \in \mathbb{N}^P$
 + Marginal demand tiers, $\S^d_{demandTier}: T$
@@ -20,8 +23,7 @@
 
 ## Constraints
 
-We first constrain allocations to respect the various demand and supply
-requirements:
+Allocations must respect various demand and supply requirements:
 
 $$
   \begin{align}
@@ -41,7 +43,7 @@ $$
   \end{align}
 $$
 
-We then enforce that each allocation contains enough size diversity:
+Each product allocation must also contain enough different sizes:
 
 $$
   \begin{align}
