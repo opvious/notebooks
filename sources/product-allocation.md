@@ -23,6 +23,14 @@ satisfying supply and diversity requirements.
 + Product activation variable $\S^v_{isProductAllocated}: \delta^{product} \in \lbrace 0,1 \rbrace^{P \times L}$
 + Size allocation activation $\S^v_{isSizeAllocated}: \delta^{size} \in \lbrace 0,1 \rbrace^{P \times S \times L}$
 
+As a convenience we also define an alias for the allocated quantity summed over demand tiers:
+
+$$
+\S^a:
+  \forall l \in L, p \in P, s \in S,
+    \alpha^T_{l,p,s} \doteq \sum_{t \in T} \alpha_{l,p,s,t}
+$$
+
 ## Constraints
 
 Allocations must respect aggregated demand and supply requirements:
@@ -34,10 +42,10 @@ $$
         \alpha_{l,p,s,t} \leq d_{l,p,s,t} \\
     \S^c_{atMostSupply}&:
       \forall p \in P, s \in S,
-        \sum_{t \in T, l \in L} \alpha_{l,p,s,t} \leq a^{max}_{p,s} \\
+        \sum_{l \in L} \alpha^T_{l,p,s} \leq a^{max}_{p,s} \\
     \S^c_{atMostMaxTotalAllocation}&:
-      \sum_{t \in T, p \in P, s \in S, l \in L}
-        \alpha_{l,p,s,t} \leq a^{maxTotal} \\
+      \sum_{p \in P, s \in S, l \in L}
+        \alpha^T_{l,p,s} \leq a^{maxTotal} \\
   \end{align}
 $$
 
@@ -47,7 +55,7 @@ $$
   \begin{align}
     \S^c_{atLeastMinAllocation}&:
       \forall p \in P, l \in L,
-        \sum_{t \in T, s \in S} \alpha_{l,p,s,t}
+        \sum_{s \in S} \alpha^T_{l,p,s}
           \geq a^{min}_p \delta^{product}_{p,l} \\
     \S^c_{atLeastMinDiversity}&:
       \forall p \in P, l \in L,
@@ -65,11 +73,10 @@ $$
         \delta^{product}_{p,l} \geq \delta^{size}_{p,s,l} \\
     \S^c_{sizeActivation}&:
       \forall p \in P, s \in S, l \in L,
-        a^{max}_{p,s} \delta^{size}_{p,s,l}
-          \geq \sum_{t \in T} \alpha_{l,p,s,t} \\
+       a^{max}_{p,s} \delta^{size}_{p,s,l} \geq \alpha^T_{l,p,s} \\
     \S^c_{sizeDeactivation}&:
       \forall p \in P, s \in S, l \in L,
-       \delta^{size}_{p,s,l} \leq \sum_{t \in T} \alpha_{l,p,s,t} \\
+       \delta^{size}_{p,s,l} \leq \alpha^T_{l,p,s} \\
   \end{align}
 $$
 
