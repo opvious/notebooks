@@ -60,12 +60,16 @@ Finally, we ensure activation variables are consistent:
 
 $$
   \begin{align}
-    \S^c_{sizeActivation}&:
-      \forall t \in T, p \in P, s \in S, l \in L,
-        \alpha_{l,p,s,t} \leq a^{max}_{p,s} \delta^{size}_{p,s,l} \\
     \S^c_{productActivation}&:
       \forall p \in P, s \in S, l \in L,
-        \delta^{size}_{p,s,l} \leq a^{max}_{p,s} \delta^{product}_{p,l} \\
+        \delta^{product}_{p,l} \geq \delta^{size}_{p,s,l} \\
+    \S^c_{sizeActivation}&:
+      \forall p \in P, s \in S, l \in L,
+        a^{max}_{p,s} \delta^{size}_{p,s,l}
+          \geq \sum_{t \in T} \alpha_{l,p,s,t} \\
+    \S^c_{sizeDeactivation}&:
+      \forall p \in P, s \in S, l \in L,
+       \delta^{size}_{p,s,l} \leq \sum_{t \in T} \alpha_{l,p,s,t} \\
   \end{align}
 $$
 
