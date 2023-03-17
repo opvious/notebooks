@@ -16,6 +16,6 @@ jobs:
       - name: Validate
         uses: opvious/register-specification-action@beta
         with:
-          token: ${{ secrets.OPVIOUS_TOKEN }}
+          token: ${{ secrets.OPVIOUS_BETA_TOKEN }}
           sources: sources/*.md
           dry-run: true
