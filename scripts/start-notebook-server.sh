@@ -16,16 +16,13 @@ fail() { # [MSG]
 }
 
 main() {
-  if [ -z "${OPVIOUS_TOKEN:-}" ]; then
-    fail 'Missing or empty OPVIOUS_TOKEN environment variable'
-  fi
   if [ -d venv ]; then
     . venv/bin/activate
   else
     python3 -m venv venv
     . venv/bin/activate
-    pip install jupyter opvious pandas yfinance
   fi
+  pip install jupyter 'opvious>=0.12.3' pandas yfinance
   jupyter notebook notebooks
 }
 
