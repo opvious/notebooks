@@ -20,8 +20,7 @@ command:
 ```
 
 This will start a [Jupyter][] notebook server in a virtualenv with all required
-dependencies. This command requires a valid [Opvious API token][token] set as
-`$OPVIOUS_TOKEN` environment variable.
+dependencies.
 
 [Jupyter]: https://jupyter.org/
 [token]: https://hub.beta.opvious.io/authorizations
