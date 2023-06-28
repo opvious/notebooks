@@ -19,8 +19,14 @@ jobs:
           token: ${{ secrets.OPVIOUS_BETA_TOKEN }}
           sources: sources/*.md
           dry-run: true
-  build-jupyterlite-site:
+  deploy-jupyterlite-site:
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,9 +37,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install -r requirements.txt
-      - name: Build site
+      - name: Build
         run: jupyter lite build --contents notebooks --output-dir dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
