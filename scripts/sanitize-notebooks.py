@@ -35,16 +35,16 @@ def _ensure_preamble(data, preamble):
 def _string_value(val):
     return "".join(val) if isinstance(val, list) else val
 
-_MARKDOWN_KEY = "text/markdown"
-
 def _sanitize_markdown_output(data):
     for cell in data["cells"]:
         if cell["cell_type"] != "code":
             continue
         for output in cell.get("outputs", []):
-            markdown = output.get("data", {}).get(_MARKDOWN_KEY)
-            if markdown:
-                output["data"][_MARKDOWN_KEY] = [_string_value(markdown)]
+            for key, val in output.get("data", {}).items():
+                output["data"][key] = _string_value(val)
+            text = output.get("text")
+            if text:
+                output["text"] = _string_value(text)
 
 _root = pathlib.Path(__file__).parent.parent.resolve()
 
