@@ -22,7 +22,7 @@ main() {
     python3 -m venv venv
     . venv/bin/activate
   fi
-  pip install jupyter 'opvious>=0.14.0' pandas yfinance
+  pip install jupyter 'opvious>=0.15.0' pandas yfinance
   jupyter notebook notebooks
 }
 
