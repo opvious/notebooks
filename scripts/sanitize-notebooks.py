@@ -6,7 +6,7 @@
 import json
 import pathlib
 
-_BOUND = ">=0.14.0"
+_BOUND = ">=0.15.0"
 
 _PREAMBLE_SOURCE_FORMAT = """
 import sys
