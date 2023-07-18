@@ -9,10 +9,10 @@ main() {
   if [ -d venv ]; then
     . venv/bin/activate
   fi
-  for p in notebooks; do
+  for p in notebooks/*; do
     python -m opvious register-notebook -d "$p"
   done
-  for p in sources; do
+  for p in sources/*; do
     python -m opvious register-sources -d "$p"
   done
 }
