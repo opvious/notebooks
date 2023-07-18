@@ -8,13 +8,6 @@ set -o errexit
 set -o pipefail
 shopt -s nullglob
 
-fail() { # [MSG]
-  if (($# > 0)); then
-    echo "error: $1" >&2
-  fi
-  exit 2
-}
-
 main() {
   if [ -d venv ]; then
     . venv/bin/activate
@@ -22,7 +15,7 @@ main() {
     python3 -m venv venv
     . venv/bin/activate
   fi
-  pip install jupyter 'opvious>=0.16.1' pandas yfinance
+  pip install jupyter 'opvious>=0.16.4' pandas
   jupyter notebook notebooks
 }
 
