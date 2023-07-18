@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install dependencies
-        run: pip install opvious pandas yfinance
+        run: pip install opvious[cli] pandas yfinance
       - name: Validate specifications
         run: ./scripts/validate-specifications.sh
         env:

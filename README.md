@@ -7,9 +7,9 @@ optimization problems with Opvious. They showcase how to use the [Python SDK][]
 and integrate with various data sources. Most can be run directly from your
 browser, for example:
 
-+ [Bin packing](https://www.opvious.io/examples/lab?path=bin-packing.ipynb)
-+ [Product allocation](https://www.opvious.io/examples/lab?path=product-allocation.ipynb)
-+ [Sudoku](https://www.opvious.io/examples/lab?path=sudoku.ipynb)
++ [Group expenses](https://www.opvious.io/examples/retro/notebooks?path=group-expenses.ipynb)
++ [Sudoku](https://www.opvious.io/examples/retro/notebooks?path=sudoku.ipynb)
++ [Product allocation](https://www.opvious.io/examples/retro/notebooks?path=product-allocation.ipynb)
 
 Each notebook can also be run locally. This repo contains a convenience script
 to start a [Jupyter][] notebook server in a virtualenv with all required
