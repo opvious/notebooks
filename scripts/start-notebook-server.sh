@@ -15,7 +15,7 @@ main() {
     python3 -m venv venv
     . venv/bin/activate
   fi
-  pip install jupyter 'opvious>=0.16.7' pandas
+  pip install jupyter 'opvious>=0.16.8' pandas
   jupyter notebook notebooks
 }
 
