@@ -19,7 +19,7 @@ main() {
     . venv/bin/activate
   fi
   pip install jupyter
-  pip install -r requirements.txt
+  pip install -r requirements.notebooks.txt
   jupyter notebook notebooks
 }
 

@@ -18,14 +18,14 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install dependencies
-        run: python -m pip install -r requirements.txt
+        run: python -m pip install -r requirements.notebooks.txt
       - name: Validate specifications
         run: ./scripts/validate-specifications.sh
         env:
           OPVIOUS_TOKEN: ${{ secrets.OPVIOUS_BETA_TOKEN }}
-  check-image-compatibility:
-    name: Check server image compatibility
-    timeout-minutes: 4
+  check-examples:
+    name: Check examples
+    timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
       - name: Check out
@@ -52,7 +52,7 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install Python dependencies
-        run: python -m pip install -r requirements.txt
+        run: python -m pip install -r requirements.notebooks.txt
       - name: Validate specifications
         run: ./scripts/validate-specifications.sh
         env:
