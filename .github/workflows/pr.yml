@@ -34,9 +34,15 @@ jobs:
         uses: actions/setup-node@v3
       - name: Install Node dependencies
         run: npm i -g opvious-cli
+      - name: Create bucket directory
+        run: |
+          bucket="$(mktemp -d)"
+          chown :1000 "$bucket"
+          echo "OPVIOUS_BUCKET=$bucket" >>"$GITHUB_ENV"
       - name: Start API server
         run: |
           opvious api start -w \
+            -b "${{ env.OPVIOUS_BUCKET }}" \
             -i latest \
             -l debug \
             -t test+examples@opvious.io=testing
