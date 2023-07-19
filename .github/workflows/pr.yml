@@ -37,14 +37,13 @@ jobs:
       - name: Create bucket directory
         run: |
           bucket="$(mktemp -d)"
-          sudo chown :1000 "$bucket"
+          sudo chown 1000:1000 "$bucket"
           echo "OPVIOUS_BUCKET=$bucket" >>"$GITHUB_ENV"
       - name: Start API server
         run: |
           opvious api start -w \
             -b "${{ env.OPVIOUS_BUCKET }}" \
             -i latest \
-            -l debug \
             -t test+examples@opvious.io=testing
         env:
           OPVIOUS_API_IMAGE_EULA: accepted
