@@ -22,7 +22,7 @@ jobs:
       - name: Validate specifications
         run: ./scripts/validate-specifications.sh
         env:
-          OPVIOUS_TOKEN: ${{ secrets.OPVIOUS_BETA_TOKEN }}
+          OPVIOUS_TOKEN: ${{ secrets.OPVIOUS_TOKEN }}
   deploy-jupyterlite-site:
     name: Deploy JupyterLite site
     timeout-minutes: 3
