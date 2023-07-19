@@ -37,7 +37,7 @@ jobs:
       - name: Create bucket directory
         run: |
           bucket="$(mktemp -d)"
-          chown :1000 "$bucket"
+          sudo chown :1000 "$bucket"
           echo "OPVIOUS_BUCKET=$bucket" >>"$GITHUB_ENV"
       - name: Start API server
         run: |
