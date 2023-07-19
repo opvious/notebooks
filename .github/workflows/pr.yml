@@ -35,7 +35,11 @@ jobs:
       - name: Install Node dependencies
         run: npm i -g opvious-cli
       - name: Start API server
-        run: opvious api start -w -i latest -t test+examples@opvious.io=testing
+        run: |
+          opvious api start -w \
+            -i latest \
+            -l debug \
+            -t test+examples@opvious.io=testing
         env:
           OPVIOUS_API_IMAGE_EULA: accepted
       - name: Setup Python
@@ -49,3 +53,6 @@ jobs:
         env:
           OPVIOUS_ENDPOINT: http://localhost:8080
           OPVIOUS_TOKEN: static:testing
+      - name: Show API logs
+        if: failure()
+        run: opvious api logs
