@@ -1,4 +1,4 @@
-name: Check examples
+name: Check compatibility
 on:
   pull_request:
     branches:
@@ -26,9 +26,9 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install dependencies
-        run: python -m pip install -r requirements.notebooks.txt
-      - name: Validate specifications
-        run: ./scripts/validate-specifications.sh
+        run: python -m pip install -r requirements.txt
+      - name: Validate
+        run: ./scripts/validate.sh
         env:
           OPVIOUS_TOKEN: ${{ secrets.OPVIOUS_TOKEN }}
   image-api:
@@ -60,9 +60,9 @@ jobs:
         with:
           python-version: '3.10'
       - name: Install Python dependencies
-        run: python -m pip install -r requirements.notebooks.txt
-      - name: Validate specifications
-        run: ./scripts/validate-specifications.sh
+        run: python -m pip install -r requirements.txt
+      - name: Validate
+        run: ./scripts/validate.sh
         env:
           OPVIOUS_ENDPOINT: http://localhost:8080
           OPVIOUS_TOKEN: static:testing

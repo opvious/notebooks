@@ -12,13 +12,9 @@ main() {
   if [ -d venv ]; then
     . venv/bin/activate
   fi
-  for p in notebooks/*.ipynb; do
+  for p in resources/**/*.ipynb; do
     echo "Validating $p..."
     python -m opvious register-notebook -d "$p"
-  done
-  for p in sources/*.md; do
-    echo "Validating $p..."
-    python -m opvious register-sources -d "$p"
   done
 }
 
