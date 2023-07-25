@@ -1,35 +1,22 @@
-# Optimization examples
+# Optimization notebooks
 
-## Python notebooks
+This repository contains notebooks solving optimization problems with [Opvious'
+Python SDK][].
 
-This repository features various [notebooks](/notebooks) which show how to solve
-optimization problems with Opvious. They showcase how to use the [Python SDK][]
-and integrate with various data sources. Most can be run directly from your
-browser, for example:
+Most can be run directly from your browser, for example:
 
-+ [Group expenses](https://www.opvious.io/examples/retro/notebooks?path=group-expenses.ipynb)
-+ [Sudoku](https://www.opvious.io/examples/retro/notebooks?path=sudoku.ipynb)
-+ [Product allocation](https://www.opvious.io/examples/retro/notebooks?path=product-allocation.ipynb)
++ [Group expenses](https://www.opvious.io/notebooks/retro/examples?path=group-expenses.ipynb)
++ [Sudoku](https://www.opvious.io/notebooks/retro/examples?path=sudoku.ipynb)
++ [Product allocation](https://www.opvious.io/notebooks/retro/examples?path=product-allocation.ipynb)
 
-Each notebook can also be run locally. This repo contains a convenience script
-to start a [Jupyter][] notebook server in a virtualenv with all required
+Notebooks can also be run locally. This repo contains a convenience script to
+start a [Jupyter][] notebook server in a virtualenv with all required
 dependencies:
 
 ```sh
-./scripts/start-notebook-server.sh
+./scripts/start-server.sh
 ```
 
 
-## Model sources
-
-This repository also contains [specifications](/sources) for optimization models
-spanning a variety of domains. For example, it includes formulations to:
-
-+ [Select portfolio stocks](/sources/portfolio-selection.md)
-+ [Allocate retail products](/sources/product-allocation.md)
-+ [Pick the best Fantasy Premier League team](/sources/fantasy-premier-league.md)
-
-
-[Python SDK]: https://opvious.readthedocs.io/
+[Opvious' Python SDK]: https://opvious.readthedocs.io/
 [Jupyter]: https://jupyter.org/
-[token]: https://hub.beta.opvious.io/authorizations

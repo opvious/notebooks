@@ -35,7 +35,7 @@ def _sanitize_markdown_output(data):
 _root = pathlib.Path(__file__).parent.parent.resolve()
 
 def main():
-    for p in _root.joinpath("notebooks").glob("*.ipynb"):
+    for p in _root.joinpath("resources").glob("**/*.ipynb"):
         print(f"Sanitizing {p}...")
         data = json.loads(p.read_text())
         _clear_pip_output(data)
