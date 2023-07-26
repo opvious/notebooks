@@ -14,7 +14,7 @@ main() {
   fi
   for p in resources/**/*.ipynb; do
     echo "Validating $p..."
-    python -m opvious register-notebook -d "$p" --allow-empty
+    python3 -m opvious register-notebook -d "$p" --allow-empty
   done
 }
 
