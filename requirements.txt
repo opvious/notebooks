@@ -1,4 +1,4 @@
 # Aggregated requirements from all notebooks
-opvious[aio,cli]>=0.18.0
+opvious[aio,cli]>=0.18.2
 pandas
 yfinance
