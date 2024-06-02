@@ -51,7 +51,7 @@ jobs:
         run: |
           opvious api start -w \
             -b "${{ env.OPVIOUS_BUCKET }}" \
-            -i latest
+            -i v0.21.1
         env:
           OPVIOUS_API_IMAGE_EULA: accept
       - name: Setup Python
