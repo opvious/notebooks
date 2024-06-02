@@ -11,7 +11,7 @@ on:
     paths-ignore:
       - '**/README.md'
   schedule:
-    - cron: '5 * * * *'
+    - cron: '5 */8 * * *'
   workflow_dispatch: {}
 jobs:
   cloud-api:
@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - name: Install dependencies
@@ -37,9 +37,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
       - name: Install Node dependencies
         run: npm i -g opvious-cli
       - name: Create bucket directory
@@ -51,8 +51,7 @@ jobs:
         run: |
           opvious api start -w \
             -b "${{ env.OPVIOUS_BUCKET }}" \
-            -i latest \
-            -t test+examples@opvious.io=testing
+            -i latest
         env:
           OPVIOUS_API_IMAGE_EULA: accepted
       - name: Setup Python
@@ -65,7 +64,7 @@ jobs:
         run: ./scripts/check-compatibility.sh
         env:
           OPVIOUS_ENDPOINT: http://localhost:8080
-          OPVIOUS_TOKEN: static:testing
+          OPVIOUS_TOKEN: license:${{ secrets.OPVIOUS_LICENSE_KEY }}
       - name: Show API logs
         if: failure()
         run: opvious api logs
