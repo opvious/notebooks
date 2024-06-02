@@ -51,9 +51,9 @@ jobs:
         run: |
           opvious api start -w \
             -b "${{ env.OPVIOUS_BUCKET }}" \
-            -i v0.21.1
+            -i latest
         env:
-          OPVIOUS_API_IMAGE_EULA: accept
+          OPVIOUS_API_IMAGE_EULA: accepted
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
