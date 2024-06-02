@@ -51,10 +51,9 @@ jobs:
         run: |
           opvious api start -w \
             -b "${{ env.OPVIOUS_BUCKET }}" \
-            -i latest \
-            -t test+examples@opvious.io=testing
+            -i latest
         env:
-          OPVIOUS_API_IMAGE_EULA: accepted
+          OPVIOUS_API_IMAGE_EULA: accept
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -65,7 +64,7 @@ jobs:
         run: ./scripts/check-compatibility.sh
         env:
           OPVIOUS_ENDPOINT: http://localhost:8080
-          OPVIOUS_TOKEN: static:testing
+          OPVIOUS_TOKEN: license:${{ secrets.OPVIOUS_LICENSE_KEY }}
       - name: Show API logs
         if: failure()
         run: opvious api logs
