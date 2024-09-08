@@ -1,11 +1,11 @@
 # Optimization notebooks
 
 This repository contains various notebooks solving optimization problems with
-the [Opvious](https://www.opvious.io). Most can be run without an account directly from
-your browser when accessed via their
+[Opvious](https://www.opvious.io). Most can be run directly from your browser
+when accessed via their
 [opvious.io/notebooks](https://www.opvious.io/notebooks/retro) URL.
 
-+ Featured guides:
++ Guides:
   + [Getting started](https://www.opvious.io/notebooks/retro/notebooks/?path=guides/welcome.ipynb) (start here!)
   + [Deploying a model](https://www.opvious.io/notebooks/retro/notebooks/?path=guides/uploading-a-model.ipynb)
   + [Self-hosting the API server](https://www.opvious.io/notebooks/retro/notebooks/?path=guides/using-a-self-hosted-api-server.ipynb)
