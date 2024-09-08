@@ -10,8 +10,8 @@ on:
       - main
     paths-ignore:
       - '**/README.md'
-  schedule:
-    - cron: '5 */8 * * *'
+  # schedule:
+  #   - cron: '5 */8 * * *'
   workflow_dispatch: {}
 jobs:
   image-api:
